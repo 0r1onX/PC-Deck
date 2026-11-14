@@ -1,0 +1,11 @@
+psutil>=5.9,<8
+pyserial>=3.5,<4
+pynput>=1.7,<2
+certifi>=2024.2.2
+nvidia-ml-py>=12.535
+# MUSIC page (Windows only): sound capture, FFT, song info, volume
+numpy>=1.26; sys_platform == "win32"
+PyAudioWPatch>=0.2.12.7; sys_platform == "win32"
+pycaw>=20240316; sys_platform == "win32"
+winrt-Windows.Media.Control>=2.0; sys_platform == "win32"
+winrt-Windows.Foundation>=2.0; sys_platform == "win32"

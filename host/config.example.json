@@ -1,0 +1,185 @@
+{
+  "serial_port": "auto",
+  "baud": 115200,
+  "interval_seconds": 2.0,
+  "disk_path": "auto",
+  "log_file": "control-deck.log",
+  "screen_sleep_minutes": 2,
+  "power_menu_button": 8,
+  "power_menu_test_mode": false,
+  "librehardwaremonitor": {
+    "enabled": {
+      "windows": true,
+      "linux": false,
+      "macos": false
+    },
+    "url": "http://127.0.0.1:8085/data.json",
+    "timeout_seconds": 0.5
+  },
+  "claude_usage": {
+    "enabled": true,
+    "refresh_minutes": 5,
+    "auto_renew": true,
+    "renew_folder": "~/claude-login"
+  },
+  "media": {
+    "enabled": true,
+    "fps": 20,
+    "volume_step": 5,
+    "effect": 1
+  },
+  "disks": {
+    "include_removable": true,
+    "exclude": []
+  },
+  "weather": {
+    "enabled": true,
+    "refresh_minutes": 15,
+    "language": "el",
+    "model": "best_match",
+    "locations": [
+      {
+        "name": "Αθήνα",
+        "label": "ATHINA",
+        "latitude": 37.9838,
+        "longitude": 23.7275
+      },
+      {
+        "name": "Βραχάτι",
+        "label": "VRACHATI",
+        "latitude": 37.95,
+        "longitude": 22.8
+      },
+      {
+        "name": "Νάξος",
+        "label": "NAXOS",
+        "latitude": 37.1036,
+        "longitude": 25.3766
+      }
+    ]
+  },
+  "macros": [
+    {
+      "id": 1,
+      "label": "Claude",
+      "icon": "claude",
+      "action": "app",
+      "value": {
+        "windows": {
+          "paths": [
+            "%LOCALAPPDATA%\\AnthropicClaude\\claude.exe",
+            "%LOCALAPPDATA%\\Programs\\Claude\\Claude.exe"
+          ],
+          "start_menu": "Claude"
+        },
+        "linux": null,
+        "macos": ["open", "-a", "Claude"]
+      }
+    },
+    {
+      "id": 2,
+      "label": "Android Studio",
+      "icon": "android_studio",
+      "action": "app",
+      "value": {
+        "windows": {
+          "paths": [
+            "%ProgramFiles%\\Android\\Android Studio\\bin\\studio64.exe",
+            "%LOCALAPPDATA%\\Programs\\Android Studio\\bin\\studio64.exe",
+            "%LOCALAPPDATA%\\Programs\\Android Studio*\\bin\\studio64.exe"
+          ],
+          "start_menu": "Android Studio"
+        },
+        "linux": {"paths": ["android-studio", "studio.sh"]},
+        "macos": ["open", "-a", "Android Studio"]
+      }
+    },
+    {
+      "id": 3,
+      "label": "Proton VPN",
+      "icon": "proton_vpn",
+      "action": "app",
+      "value": {
+        "windows": {
+          "paths": [
+            "%ProgramFiles%\\Proton\\VPN\\ProtonVPN.Launcher.exe",
+            "%ProgramFiles%\\Proton\\VPN\\v*\\ProtonVPN.Client.exe",
+            "%ProgramFiles(x86)%\\Proton Technologies\\ProtonVPN\\ProtonVPN.exe"
+          ],
+          "start_menu": "Proton VPN"
+        },
+        "linux": ["protonvpn-app"],
+        "macos": ["open", "-a", "ProtonVPN"]
+      }
+    },
+    {
+      "id": 4,
+      "label": "Telegram",
+      "icon": "telegram",
+      "action": "app",
+      "value": {
+        "windows": {
+          "paths": ["%APPDATA%\\Telegram Desktop\\Telegram.exe"],
+          "start_menu": "Telegram"
+        },
+        "linux": ["telegram-desktop"],
+        "macos": ["open", "-a", "Telegram"]
+      }
+    },
+    {
+      "id": 5,
+      "label": "PowerShell",
+      "icon": "powershell",
+      "action": "app",
+      "new_console": true,
+      "value": {
+        "windows": {
+          "paths": ["pwsh.exe", "powershell.exe"],
+          "args": ["-NoLogo"]
+        },
+        "linux": ["pwsh"],
+        "macos": ["pwsh"]
+      },
+      "working_directory": {
+        "windows": "%USERPROFILE%",
+        "linux": "~",
+        "macos": "~"
+      }
+    },
+    {
+      "id": 6,
+      "label": "Task Manager",
+      "icon": "task_manager",
+      "action": "command",
+      "value": {
+        "windows": ["taskmgr.exe"],
+        "linux": ["gnome-system-monitor"],
+        "macos": ["open", "-a", "Activity Monitor"]
+      }
+    },
+    {
+      "id": 7,
+      "label": "O-KAM PRO",
+      "icon": "okam_pro",
+      "action": "app",
+      "value": {
+        "windows": {
+          "start_menu": "O-KAM Pro"
+        },
+        "linux": null,
+        "macos": null
+      }
+    },
+    {
+      "id": 8,
+      "label": "Lock PC",
+      "icon": "lock",
+      "action": "command",
+      "value": {
+        "windows": ["rundll32.exe", "user32.dll,LockWorkStation"],
+        "linux": ["loginctl", "lock-session"],
+        "macos": ["pmset", "displaysleepnow"]
+      }
+    }
+  ]
+}

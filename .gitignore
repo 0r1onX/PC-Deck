@@ -1,0 +1,36 @@
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# CLion / JetBrains
+.idea/
+cmake-build-*/
+
+# VS Code
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+host/.venv/
+host/venv/
+
+# Local configuration and logs
+host/config.json
+host/control-deck.log
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Not published: third-party files and local working copies
+local-only/
+3D printed case/
+backup/
+Claude outputs/
+# unused icon images
+icons/Lock PC 01b.png
+icons/Music 01b.png
